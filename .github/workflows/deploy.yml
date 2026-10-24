@@ -69,10 +69,10 @@ jobs:
       - name: Deploy to GitHub Pages repo
         uses: cpina/github-action-push-to-another-repository@main
         env:
-          API_TOKEN_GITHUB: ${{ secrets.DEPLOY_TOKEN }}
+          SSH_DEPLOY_KEY: ${{ secrets.PAGES_DEPLOY_KEY }}
         with:
           source-directory: dist/public
-          destination-github-username: iamabotama
+          destination-github-username: VFAssociates
           destination-repository-name: taylormadeestimates.com
           target-branch: main
           commit-message: "Deploy: ${{ github.sha }} — ${{ github.event.head_commit.message }}"
